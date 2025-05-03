@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pokémon Music Hunt</title>
+  <script src="https://cdn.tailwindcss.com"></script> 
+  <style>
+    body {
+      background-image: url('https://wallpapers.com/images/featured/cute-pokemon-pictures-ux6wp4rynhnfuq4t.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+    }
+
+    /* Enhanced button hover effects */
+    .fancy-btn {
+      transition: all 0.3s ease, transform 0.2s ease;
+    }
+    .fancy-btn:hover {
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      transform: scale(1.12) rotate(-1deg);
+    }
+
+    /* Splash screen styling */
+    #splash {
+      position: fixed;
+      inset: 0;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+      transition: opacity 0.8s ease;
+    }
+  </style>
+</head>
+<body class="relative text-white text-center">
+
+  <!-- SPLASH SCREEN -->
+  <div id="splash">
+    <img src="https://hackemon.dev/assets/pikarun-DbCjDVt7.gif" alt="Loading..." class="w-48 h-48">
+  </div>
+
+  <!-- TOP CENTER TEXT -->
+  <div class="absolute top-6 left-1/2 transform -translate-x-1/2 space-y-4 z-20">
+    <h1 class="text-4xl md:text-5xl font-extrabold drop-shadow-lg text-yellow-300">🎮 Welcome Trainer!</h1>
+    <p class="text-lg md:text-2xl font-semibold text-white drop-shadow-md">"Your Pokédex. Your Adventure. Let’s Catch 'em All!"</p>
+  </div>
+
+  <!-- TOP LEFT GIF -->
+  <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHFlb2pzaHF1cTV2NHRibnBvMzQ3ejgwcjFrcjZqZzF3MG0yZHdheCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/EE2HX7cqbhpC6Rzq2V/giphy.gif" alt="Top Left GIF" class="absolute top-4 left-4 w-30 md:w-40 rounded-xl shadow-lg object-cover z-10">
+
+  <!-- BOTTOM RIGHT BUTTONS -->
+  <div class="absolute bottom-6 right-6 flex flex-col items-center space-y-4 z-10">
+    <button id="pokedexBtn" class="fancy-btn bg-yellow-400 hover:bg-yellow-300 text-black font-extrabold py-3 px-6 rounded-3xl shadow-2xl text-lg tracking-wider border-2 border-yellow-600">
+      📋 Pokédex
+    </button>
+    <button id="musicBtn" class="fancy-btn bg-pink-500 hover:bg-pink-400 text-white font-extrabold py-3 px-6 rounded-3xl shadow-2xl text-lg tracking-wider border-2 border-pink-700">
+      🎵 Music Hunt
+    </button>
+    <button class="fancy-btn bg-red-500 hover:bg-red-400 text-white font-extrabold py-3 px-6 rounded-3xl shadow-2xl text-lg tracking-wider border-2 border-red-700">
+      🔥 Quests..
+    </button>
+  </div>
+
+  <script>
+    // SPLASH SCREEN HANDLER
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const splash = document.getElementById('splash');
+        splash.style.opacity = 0;
+        splash.style.pointerEvents = 'none';
+        setTimeout(() => splash.remove(), 800);  // remove after fade
+      }, 3000); // 3 seconds
+    });
+
+    // POKEDEX BUTTON HANDLER
+    document.getElementById('pokedexBtn').addEventListener('click', () => {
+      window.location.href = 'POKEDEX.html';
+    });
+
+    // MUSIC HUNT BUTTON HANDLER
+    document.getElementById('musicBtn').addEventListener('click', () => {
+      window.location.href = 'search.html';
+    });
+  </script>
+
+</body>
+</html>
