@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>3D Carousel</title>
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<style>
+body {
+    margin: 0;
+    background: url('https://imgs.search.brave.com/mhjMeG0LHbeGPeLkByGVqWu92aAbeHscWtwoousy0mk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA4Lzk0LzAyLzAw/LzM2MF9GXzg5NDAy/MDAwMV9pTEdvR0JX/aWZ4cmloSUQ4VjJN/dkYyRFdYeVNSVnBY/Wi5qcGc') no-repeat center center fixed;
+    background-size: cover;
+    color: #FFD700;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+h1 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #FFD700;
+    font-size: 36px;
+    font-weight: bold;
+    text-shadow: 0 0 5px #000, 0 0 10px #000;
+    z-index: 10;
+}
+
+.carousel-container {
+    width: 100%;
+    height: 80vh; /* Adjust height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+    margin-top: 50px; /* Added margin to push carousel down */
+}
+
+.swiper-container {
+    width: 80%; /* Reduced width */
+    max-width: 900px; /* Adjusted max width */
+    height: 400px; /* Adjusted height */
+}
+
+.swiper-slide {
+    background: transparent;
+    width: 250px; /* Adjusted card size */
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    background: #050920;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.caption {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #FFD700;
+    text-shadow: 0 0 5px #000, 0 0 10px #000;
+}
+
+.swiper-slide-active .card {
+    transform: scale(1.05);
+}
+</style>
+</head>
+<body>
+<h1>PokéDex</h1> <!-- Title in top-left corner -->
+
+<div class="carousel-container">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="card">
+          <img src="https://www.hackemon.dev/assets/1-BKMFUVAc.png" alt="Pikachu Web3 & Blockchain">
+          <div class="caption">Electric Type</div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="card">
+          <img src="https://www.hackemon.dev/assets/2-CkI9Pj2_.png" alt="Charizard AI/ML">
+          <div class="caption">Fire Type</div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="card">
+          <img src="https://www.hackemon.dev/assets/3-DmnvAY_D.png" alt="Squirtle AR/VR">
+          <div class="caption">Water Type</div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="card">
+          <img src="https://www.hackemon.dev/assets/4-C1OJUHXU.png" alt="Bulbasaur Cybersecurity">
+          <div class="caption">Grass Type</div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="card">
+          <img src="https://www.hackemon.dev/assets/5-CSU6-QwM.png" alt="Togepi Open Innovation">
+          <div class="caption">Fairy Type</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+var swiper = new Swiper('.swiper-container', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    loop: true,
+    spaceBetween: 40,
+    coverflowEffect: {
+      rotate: 30,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: false,
+    },
+    speed: 600
+});
+</script>
+</body>
+</html>

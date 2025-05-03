@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Sound Hunt - Sign Up</title>
+
+    <!-- Google Font for a retro gaming vibe -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="style.css/signup.css">
+</head>
+
+<body>
+    <!-- Background Overlay -->
+    <div class="overlay"></div>
+
+    <!-- Ash GIF above the sign-up section -->
+    <div class="ash-container">
+        <img src="download.gif" alt="Ash" class="ash">
+    </div>
+
+    <!-- Sign-Up Section -->
+    <div class="login-container">
+        <form class="login-form" id="signupForm">
+            <h1>Pokémon Sound Hunt - Sign Up</h1>
+            <input type="text" id="fullName" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="tel" id="mobile" placeholder="Mobile Number" required>
+            <button type="button" id="sendOtpBtn">Send OTP</button>
+            <input type="text" id="otp" placeholder="Enter OTP" required>
+            <button type="submit">Sign Up</button>
+            <p>Already have an account? <a href="login.html" id="goToLogin" class="link-with-loader">Login</a></p>
+
+        </form>
+    </div>
+
+    <!-- Loading Animation -->
+    <div id="loading">
+        <img src="pika.gif" alt="Loading...">
+    </div>
+
+
+
+    <!-- Link to JavaScript -->
+    <script src="node.js/signup.js"></script>
+</body>
+
+</html>
